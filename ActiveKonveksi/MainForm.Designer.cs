@@ -58,7 +58,7 @@
             this.barLargeButtonItem1 = new DevExpress.XtraBars.BarLargeButtonItem();
             this.barLargeButtonItem2 = new DevExpress.XtraBars.BarLargeButtonItem();
             this.documentManager1 = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
-            this.tabbedView1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
+            this.nativeMdiView1 = new DevExpress.XtraBars.Docking2010.Views.NativeMdi.NativeMdiView(this.components);
             this.splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::ActiveKonveksi.WaitForm1), true, true);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
@@ -68,7 +68,7 @@
             this.dockPanel2.SuspendLayout();
             this.dockPanel2_Container.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.documentManager1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tabbedView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nativeMdiView1)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -235,6 +235,7 @@
             this.treeNavigate.ParentFieldName = "Grup";
             this.treeNavigate.Size = new System.Drawing.Size(192, 628);
             this.treeNavigate.TabIndex = 0;
+            this.treeNavigate.Click += new System.EventHandler(this.treeNavigate_Click);
             // 
             // dockPanel2
             // 
@@ -301,6 +302,7 @@
             this.btnDelete.Size = new System.Drawing.Size(54, 62);
             this.btnDelete.TabIndex = 1;
             this.btnDelete.Text = "Delete";
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnAdd
             // 
@@ -311,6 +313,7 @@
             this.btnAdd.Size = new System.Drawing.Size(54, 62);
             this.btnAdd.TabIndex = 0;
             this.btnAdd.Text = "Add";
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // barSubItem2
             // 
@@ -347,11 +350,11 @@
             // 
             // documentManager1
             // 
-            this.documentManager1.ContainerControl = this;
+            this.documentManager1.MdiParent = this;
             this.documentManager1.MenuManager = this.barManager1;
-            this.documentManager1.View = this.tabbedView1;
+            this.documentManager1.View = this.nativeMdiView1;
             this.documentManager1.ViewCollection.AddRange(new DevExpress.XtraBars.Docking2010.Views.BaseView[] {
-            this.tabbedView1});
+            this.nativeMdiView1});
             // 
             // splashScreenManager1
             // 
@@ -381,7 +384,7 @@
             this.dockPanel2.ResumeLayout(false);
             this.dockPanel2_Container.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.documentManager1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tabbedView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nativeMdiView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -415,9 +418,9 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton3;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
         private DevExpress.XtraBars.Docking2010.DocumentManager documentManager1;
-        private DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView tabbedView1;
         private DevExpress.XtraSplashScreen.SplashScreenManager spMainForm;
         private DevExpress.XtraTreeList.TreeList treeNavigate;
         private DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1;
+        private DevExpress.XtraBars.Docking2010.Views.NativeMdi.NativeMdiView nativeMdiView1;
     }
 }

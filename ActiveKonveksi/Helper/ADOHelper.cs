@@ -60,8 +60,84 @@ namespace ActiveKonveksi.Helper
             return dt;
         }
 
+        public OBJSQL InsertQuery(string sQuery, List<MySqlParameter> _params = null)
+        {
+            OBJSQL objSQL = new OBJSQL();
+            Int32 record = 0;
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+               MySqlTransaction trans1 = conn.BeginTransaction();
+                try
+                {
+                    MySqlCommand cmd = new MySqlCommand()
+                    {
+                        Connection = conn,
+                        Transaction = trans1,
+                        CommandText = sQuery,
+                        CommandType = CommandType.Text,
+                    };
 
+                    cmd.Parameters.AddRange(_params.ToArray());
+                    record = cmd.ExecuteNonQuery();
+                    trans1.Commit();
+                }
+                catch (Exception ex)
+                {
+                    trans1.Rollback();
+                    XtraMessageBox.Show(ex.Message);
+                }
+                if (record != 0)
+                {
+                    XtraMessageBox.Show(ConfigurationManager.AppSettings["msg_success_insert"]);
+                    GlobalVar.Success = true;
+                }
+                else
+                {
+                    GlobalVar.Success = false;
+                }
+            }
 
+            return objSQL;
+        }
+        public OBJSQL DeleteQuery(string sQuery)
+        {
+            OBJSQL objSQL = new OBJSQL();
+            Int32 record = 0;
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+                MySqlTransaction trans1 = conn.BeginTransaction();
+                try
+                {
+                    MySqlCommand cmd = new MySqlCommand()
+                    {
+                        Connection = conn,
+                        Transaction = trans1,
+                        CommandText = sQuery,
+                        CommandType = CommandType.Text,
+                    };
+                    record = cmd.ExecuteNonQuery();
+                    trans1.Commit();
+                }
+                catch (Exception ex)
+                {
+                    trans1.Rollback();
+                    XtraMessageBox.Show(ex.Message);
+                }
+                if (record != 0)
+                {
+                    XtraMessageBox.Show(ConfigurationManager.AppSettings["msg_success_delete"]);
+                    GlobalVar.Success = true;
+                }
+                else
+                {
+                    GlobalVar.Success = false;
+                }
+            }
+
+            return objSQL;
+        }
 
     }
 }

@@ -51,6 +51,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Accessibility" />
     <Reference Include="DevExpress.BonusSkins.v15.2, Version=15.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Data.v15.2, Version=15.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Printing.v15.2.Core, Version=15.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -74,10 +75,16 @@
       <HintPath>H:\Dimas\VisualStudio 2015\Projects\ActiveSoft2POSystem\DLL\mysql.web.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -87,8 +94,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BusinessObjects.cs" />
+    <Compile Include="Controller\DeleteController.cs" />
     <Compile Include="Controller\ExecuteController.cs" />
+    <Compile Include="Controller\InsertController.cs" />
     <Compile Include="Controller\ListController.cs" />
+    <Compile Include="GlobalVar.cs" />
     <Compile Include="Helper\ADOHelper.cs" />
     <Compile Include="Helper\OBJSQL.cs" />
     <Compile Include="MainForm.cs">
@@ -97,11 +107,37 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modal\ModalBarang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modal\ModalBarang.Designer.cs">
+      <DependentUpon>ModalBarang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modal\ModalSupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modal\ModalSupplier.Designer.cs">
+      <DependentUpon>ModalSupplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\MBarang.cs" />
+    <Compile Include="Model\MSupplier.cs" />
+    <Compile Include="Module\Barang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Module\Barang.Designer.cs">
+      <DependentUpon>Barang.cs</DependentUpon>
+    </Compile>
     <Compile Include="Module\Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Module\Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Module\Supplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Module\Supplier.Designer.cs">
+      <DependentUpon>Supplier.cs</DependentUpon>
     </Compile>
     <Compile Include="Person.cs" />
     <Compile Include="Program.cs" />
@@ -114,6 +150,21 @@
     </Compile>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modal\ModalBarang.resx">
+      <DependentUpon>ModalBarang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modal\ModalSupplier.resx">
+      <DependentUpon>ModalSupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Module\Barang.resx">
+      <DependentUpon>Barang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Module\Dashboard.resx">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Module\Supplier.resx">
+      <DependentUpon>Supplier.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

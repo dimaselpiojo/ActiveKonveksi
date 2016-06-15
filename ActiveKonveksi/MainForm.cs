@@ -12,6 +12,8 @@ using DevExpress.UserSkins;
 using DevExpress.XtraEditors;
 using ActiveKonveksi.Module;
 using ActiveKonveksi.Controller;
+using ActiveKonveksi.Modal;
+using ActiveKonveksi.Helper;
 
 namespace ActiveKonveksi
 {
@@ -25,6 +27,8 @@ namespace ActiveKonveksi
 
         }
         Dashboard _Dashboard = null;
+        Barang _Barang = null;
+        Supplier _Supplier = null;
         void InitTreeListControl()
         {
             ListController lc = new ListController();
@@ -32,14 +36,13 @@ namespace ActiveKonveksi
             treeNavigate.DataSource = dt;
             treeNavigate.PopulateColumns();
             treeNavigate.ExpandAll();
-            treeNavigate.Columns["FormName"].VisibleIndex = -1;
+            treeNavigate.Columns["formname"].VisibleIndex = -1;
         }
 
         void DataBinding(Projects projects)
         {
            
         }
-        BindingList<Person> gridDataList = new BindingList<Person>();
         void InitGrid()
         {
           
@@ -57,6 +60,98 @@ namespace ActiveKonveksi
             _Dashboard.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             _Dashboard.Show();
             splashScreenManager1.CloseWaitForm();
+        }
+
+        private void treeNavigate_Click(object sender, EventArgs e)
+        {
+            GlobalVar.TabSelected = treeNavigate.FocusedNode[treeNavigate.Columns[1]].ToString();
+            switch (treeNavigate.FocusedNode[treeNavigate.Columns[1]].ToString())
+            {
+                case "Dashboard":
+                    if (_Dashboard == null)
+                    {
+                        _Dashboard = new Dashboard();
+                        _Dashboard.MdiParent = this;
+
+                    }
+                    splashScreenManager1.ShowWaitForm();
+                    _Dashboard.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+                    _Dashboard.Show();
+                    splashScreenManager1.CloseWaitForm();
+                   
+                    break;
+                case "Barang":
+                    if (_Barang == null)
+                    {
+                        _Barang = new Barang();
+                        _Barang.MdiParent = this;
+
+                    }
+                    splashScreenManager1.ShowWaitForm();
+                    _Barang.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+                    _Barang.Show();
+                    splashScreenManager1.CloseWaitForm();
+
+                    break;
+                case "Supplier":
+                    if (_Supplier == null)
+                    {
+                        _Supplier = new Supplier();
+                        _Supplier.MdiParent = this;
+
+                    }
+                    splashScreenManager1.ShowWaitForm();
+                    _Supplier.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+                    _Supplier.Show();
+                    splashScreenManager1.CloseWaitForm();
+
+                    break;
+            }
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            string _menus = GlobalVar.TabSelected;
+            switch (_menus)
+            {
+                case "Barang":
+                    ModalBarang MI = new ModalBarang();
+                    if (MI.ShowDialog() == DialogResult.OK)
+                    {
+                        _Barang.loadBarang();
+                    }
+                    break;
+                case "Supplier":
+                    ModalSupplier MS = new ModalSupplier();
+                    if (MS.ShowDialog() == DialogResult.OK)
+                    {
+                        _Supplier.loadSupplier();
+                    }
+                    break;
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            string _menus = GlobalVar.TabSelected;
+            DeleteController ic = new DeleteController();
+            DialogResult result1;
+            OBJSQL obj = null;
+            switch (_menus)
+            {
+                case "Barang":
+                    Barang b = new Barang();
+                    result1 = XtraMessageBox.Show("Are you sure you want to delete ? ",
+                                                "Important Question",
+                                                MessageBoxButtons.YesNo,
+                                                MessageBoxIcon.Question);
+                    if (result1 == DialogResult.Yes)
+                    {
+                        obj = ic.Delete("m_barang", "kode", _Barang.kodeBarang);
+                        _Barang.loadBarang();
+                    }
+                    break;
+            }
         }
     }
 }
