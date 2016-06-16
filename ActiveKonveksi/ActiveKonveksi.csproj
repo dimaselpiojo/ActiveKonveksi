@@ -113,6 +113,12 @@
     <Compile Include="Modal\ModalBarang.Designer.cs">
       <DependentUpon>ModalBarang.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modal\ModalPelanggan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modal\ModalPelanggan.Designer.cs">
+      <DependentUpon>ModalPelanggan.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modal\ModalSupplier.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +126,7 @@
       <DependentUpon>ModalSupplier.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\MBarang.cs" />
+    <Compile Include="Model\MPelanggan.cs" />
     <Compile Include="Model\MSupplier.cs" />
     <Compile Include="Module\Barang.cs">
       <SubType>Form</SubType>
@@ -132,6 +139,12 @@
     </Compile>
     <Compile Include="Module\Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Module\Pelanggan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Module\Pelanggan.Designer.cs">
+      <DependentUpon>Pelanggan.cs</DependentUpon>
     </Compile>
     <Compile Include="Module\Supplier.cs">
       <SubType>Form</SubType>
@@ -154,6 +167,9 @@
     <EmbeddedResource Include="Modal\ModalBarang.resx">
       <DependentUpon>ModalBarang.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modal\ModalPelanggan.resx">
+      <DependentUpon>ModalPelanggan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modal\ModalSupplier.resx">
       <DependentUpon>ModalSupplier.cs</DependentUpon>
     </EmbeddedResource>
@@ -162,6 +178,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Module\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Module\Pelanggan.resx">
+      <DependentUpon>Pelanggan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Module\Supplier.resx">
       <DependentUpon>Supplier.cs</DependentUpon>

@@ -96,6 +96,42 @@ namespace ActiveKonveksi.Controller
         }
         #endregion
         /* ============================================================= */
+
+        /* TABEL Pelanggan */
+        #region Tabel Pelanggan
+        public OBJSQL SaveNewPelanggan(MPelanggan MPelanggan)
+        {
+            OBJSQL obj = null;
+            List<MySqlParameter> sqlParam = new List<MySqlParameter>();
+            sqlParam.Add(new MySqlParameter() { ParameterName = "@kode", MySqlDbType = MySqlDbType.VarChar, Value = MPelanggan.kode });
+            sqlParam.Add(new MySqlParameter() { ParameterName = "@nama", MySqlDbType = MySqlDbType.VarChar, Value = MPelanggan.nama });
+            sqlParam.Add(new MySqlParameter() { ParameterName = "@alamat", MySqlDbType = MySqlDbType.VarChar, Value = MPelanggan.alamat });
+            sqlParam.Add(new MySqlParameter() { ParameterName = "@tlp", MySqlDbType = MySqlDbType.VarChar, Value = MPelanggan.tlp });
+            sqlParam.Add(new MySqlParameter() { ParameterName = "@email", MySqlDbType = MySqlDbType.VarChar, Value = MPelanggan.email });
+            sqlParam.Add(new MySqlParameter() { ParameterName = "@keterangan", MySqlDbType = MySqlDbType.VarChar, Value = MPelanggan.keterangan });
+            String SQLQuery =
+                "INSERT INTO m_pelanggan (kode, nama, alamat, tlp, email, keterangan) " +
+                "VALUES (@kode, @nama, @alamat, @tlp, @email, @keterangan); ";
+            obj = h.InsertQuery(SQLQuery, sqlParam);
+            return obj;
+        }
+        public OBJSQL UpdatePelanggan(MPelanggan MPelanggan, string kode)
+        {
+            OBJSQL obj = null;
+            List<MySqlParameter> sqlParam = new List<MySqlParameter>();
+            sqlParam.Add(new MySqlParameter() { ParameterName = "@kode", MySqlDbType = MySqlDbType.VarChar, Value = MPelanggan.kode });
+            sqlParam.Add(new MySqlParameter() { ParameterName = "@nama", MySqlDbType = MySqlDbType.VarChar, Value = MPelanggan.nama });
+            sqlParam.Add(new MySqlParameter() { ParameterName = "@alamat", MySqlDbType = MySqlDbType.VarChar, Value = MPelanggan.alamat });
+            sqlParam.Add(new MySqlParameter() { ParameterName = "@tlp", MySqlDbType = MySqlDbType.VarChar, Value = MPelanggan.tlp });
+            sqlParam.Add(new MySqlParameter() { ParameterName = "@email", MySqlDbType = MySqlDbType.VarChar, Value = MPelanggan.email });
+            sqlParam.Add(new MySqlParameter() { ParameterName = "@keterangan", MySqlDbType = MySqlDbType.VarChar, Value = MPelanggan.keterangan });
+
+            string SQLQuery = "UPDATE m_pelanggan set kode=@kode, nama=@nama, alamat=@alamat, tlp=@tlp, email=@email, keterangan=@keterangan where kode= " + kode;
+            obj = h.InsertQuery(SQLQuery, sqlParam);
+            return obj;
+        }
+        #endregion
+        /* ============================================================= */
     }
 }
     

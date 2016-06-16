@@ -29,6 +29,7 @@ namespace ActiveKonveksi
         Dashboard _Dashboard = null;
         Barang _Barang = null;
         Supplier _Supplier = null;
+        Pelanggan _Pelanggan = null;
         void InitTreeListControl()
         {
             ListController lc = new ListController();
@@ -106,6 +107,19 @@ namespace ActiveKonveksi
                     splashScreenManager1.CloseWaitForm();
 
                     break;
+                case "Pelanggan":
+                    if (_Pelanggan == null)
+                    {
+                        _Pelanggan = new Pelanggan();
+                        _Pelanggan.MdiParent = this;
+
+                    }
+                    splashScreenManager1.ShowWaitForm();
+                    _Pelanggan.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+                    _Pelanggan.Show();
+                    splashScreenManager1.CloseWaitForm();
+
+                    break;
             }
         }
 
@@ -128,6 +142,13 @@ namespace ActiveKonveksi
                         _Supplier.loadSupplier();
                     }
                     break;
+                case "Pelanggan":
+                    ModalPelanggan MP = new ModalPelanggan();
+                    if (MP.ShowDialog() == DialogResult.OK)
+                    {
+                        _Pelanggan.loadPelanggan();
+                    }
+                    break;
             }
         }
 
@@ -140,7 +161,6 @@ namespace ActiveKonveksi
             switch (_menus)
             {
                 case "Barang":
-                    Barang b = new Barang();
                     result1 = XtraMessageBox.Show("Are you sure you want to delete ? ",
                                                 "Important Question",
                                                 MessageBoxButtons.YesNo,
@@ -149,6 +169,28 @@ namespace ActiveKonveksi
                     {
                         obj = ic.Delete("m_barang", "kode", _Barang.kodeBarang);
                         _Barang.loadBarang();
+                    }
+                    break;
+                case "Supplier":
+                    result1 = XtraMessageBox.Show("Are you sure you want to delete ? ",
+                                                "Important Question",
+                                                MessageBoxButtons.YesNo,
+                                                MessageBoxIcon.Question);
+                    if (result1 == DialogResult.Yes)
+                    {
+                        obj = ic.Delete("m_supplier", "kode", _Supplier.kodeSupplier);
+                        _Supplier.loadSupplier();
+                    }
+                    break;
+                case "Pelanggan":
+                    result1 = XtraMessageBox.Show("Are you sure you want to delete ? ",
+                                                "Important Question",
+                                                MessageBoxButtons.YesNo,
+                                                MessageBoxIcon.Question);
+                    if (result1 == DialogResult.Yes)
+                    {
+                        obj = ic.Delete("m_pelanggan", "kode", _Pelanggan.kodePelanggan);
+                        _Pelanggan.loadPelanggan();
                     }
                     break;
             }

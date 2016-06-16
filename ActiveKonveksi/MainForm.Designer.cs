@@ -50,7 +50,7 @@
             this.dockPanel2_Container = new DevExpress.XtraBars.Docking.ControlContainer();
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnRefresh = new DevExpress.XtraEditors.SimpleButton();
             this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
             this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
             this.barSubItem2 = new DevExpress.XtraBars.BarSubItem();
@@ -255,7 +255,7 @@
             // 
             this.dockPanel2_Container.Controls.Add(this.simpleButton3);
             this.dockPanel2_Container.Controls.Add(this.simpleButton2);
-            this.dockPanel2_Container.Controls.Add(this.simpleButton1);
+            this.dockPanel2_Container.Controls.Add(this.btnRefresh);
             this.dockPanel2_Container.Controls.Add(this.btnDelete);
             this.dockPanel2_Container.Controls.Add(this.btnAdd);
             this.dockPanel2_Container.Location = new System.Drawing.Point(4, 23);
@@ -283,15 +283,15 @@
             this.simpleButton2.TabIndex = 3;
             this.simpleButton2.Text = "Preview";
             // 
-            // simpleButton1
+            // btnRefresh
             // 
-            this.simpleButton1.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.Image")));
-            this.simpleButton1.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
-            this.simpleButton1.Location = new System.Drawing.Point(123, 3);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(54, 62);
-            this.simpleButton1.TabIndex = 2;
-            this.simpleButton1.Text = "Refresh";
+            this.btnRefresh.Image = ((System.Drawing.Image)(resources.GetObject("btnRefresh.Image")));
+            this.btnRefresh.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
+            this.btnRefresh.Location = new System.Drawing.Point(123, 3);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(54, 62);
+            this.btnRefresh.TabIndex = 2;
+            this.btnRefresh.Text = "Refresh";
             // 
             // btnDelete
             // 
@@ -414,7 +414,7 @@
         private DevExpress.XtraBars.Docking.ControlContainer dockPanel2_Container;
         private DevExpress.XtraEditors.SimpleButton btnAdd;
         private DevExpress.XtraEditors.SimpleButton btnDelete;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.SimpleButton btnRefresh;
         private DevExpress.XtraEditors.SimpleButton simpleButton3;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
         private DevExpress.XtraBars.Docking2010.DocumentManager documentManager1;

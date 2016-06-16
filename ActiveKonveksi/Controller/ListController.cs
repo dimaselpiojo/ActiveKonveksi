@@ -65,5 +65,16 @@ namespace ActiveKonveksi.Controller
         }
         #endregion
         /*===================================*/
+        /* Tabel Pelanggan */
+        #region Tabel Pelanggan
+        public DataTable gridPelanggan()
+        {
+            string SQL = "SELECT kode Kode, nama Nama, alamat Alamat, tlp Telepon, Email, rating_transaksi RatingTransaksi, rating_akumulasi RatingAkumulasi, Keterangan from m_pelanggan ";
+            ADOHelper h = new ADOHelper();
+            DataTable dt = h.ListByQuery(SQL);
+            return dt;
+        }
+        #endregion
+        /*===================================*/
     }
 }
