@@ -30,6 +30,7 @@ namespace ActiveKonveksi
         Barang _Barang = null;
         Supplier _Supplier = null;
         Pelanggan _Pelanggan = null;
+        Pembelian _Pembelian = null;
         void InitTreeListControl()
         {
             ListController lc = new ListController();
@@ -120,6 +121,19 @@ namespace ActiveKonveksi
                     splashScreenManager1.CloseWaitForm();
 
                     break;
+                case "Pembelian":
+                    if (_Pembelian == null)
+                    {
+                        _Pembelian = new Pembelian();
+                        _Pembelian.MdiParent = this;
+
+                    }
+                    splashScreenManager1.ShowWaitForm();
+                    _Pembelian.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+                    _Pembelian.Show();
+                    splashScreenManager1.CloseWaitForm();
+
+                    break;
             }
         }
 
@@ -147,6 +161,13 @@ namespace ActiveKonveksi
                     if (MP.ShowDialog() == DialogResult.OK)
                     {
                         _Pelanggan.loadPelanggan();
+                    }
+                    break;
+                case "Pembelian":
+                    ModalPembelian MPL = new ModalPembelian();
+                    if (MPL.ShowDialog() == DialogResult.OK)
+                    {
+                        _Pembelian.loadPembelian();
                     }
                     break;
             }

@@ -76,5 +76,27 @@ namespace ActiveKonveksi.Controller
         }
         #endregion
         /*===================================*/
+        /* Tabel Pembelian */
+        #region Tabel Pembelian
+        public DataTable gridvPembelian()
+        {
+            string SQL = "SELECT * from vPembelian ";
+            ADOHelper h = new ADOHelper();
+            DataTable dt = h.ListByQuery(SQL);
+            return dt;
+        }
+        #endregion
+        /*===================================*/
+        /* Tabel Tunai Kredit */
+        #region Tabel Tunai Kredit
+        public DataTable gridTunaiKredit()
+        {
+            string SQL = "SELECT id_kredit Id, Nama from kredit ";
+            ADOHelper h = new ADOHelper();
+            DataTable dt = h.ListByQuery(SQL);
+            return dt;
+        }
+        #endregion
+        /*===================================*/
     }
 }

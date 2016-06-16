@@ -119,6 +119,12 @@
     <Compile Include="Modal\ModalPelanggan.Designer.cs">
       <DependentUpon>ModalPelanggan.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modal\ModalPembelian.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modal\ModalPembelian.Designer.cs">
+      <DependentUpon>ModalPembelian.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modal\ModalSupplier.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,6 +133,7 @@
     </Compile>
     <Compile Include="Model\MBarang.cs" />
     <Compile Include="Model\MPelanggan.cs" />
+    <Compile Include="Model\MPembelian.cs" />
     <Compile Include="Model\MSupplier.cs" />
     <Compile Include="Module\Barang.cs">
       <SubType>Form</SubType>
@@ -145,6 +152,12 @@
     </Compile>
     <Compile Include="Module\Pelanggan.Designer.cs">
       <DependentUpon>Pelanggan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Module\Pembelian.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Module\Pembelian.Designer.cs">
+      <DependentUpon>Pembelian.cs</DependentUpon>
     </Compile>
     <Compile Include="Module\Supplier.cs">
       <SubType>Form</SubType>
@@ -170,6 +183,9 @@
     <EmbeddedResource Include="Modal\ModalPelanggan.resx">
       <DependentUpon>ModalPelanggan.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modal\ModalPembelian.resx">
+      <DependentUpon>ModalPembelian.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modal\ModalSupplier.resx">
       <DependentUpon>ModalSupplier.cs</DependentUpon>
     </EmbeddedResource>
@@ -181,6 +197,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Module\Pelanggan.resx">
       <DependentUpon>Pelanggan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Module\Pembelian.resx">
+      <DependentUpon>Pembelian.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Module\Supplier.resx">
       <DependentUpon>Supplier.cs</DependentUpon>
@@ -221,6 +240,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Layout\GridView.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

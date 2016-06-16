@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 using DevExpress.LookAndFeel;
+using System.Threading;
+using System.Globalization;
 
 namespace ActiveKonveksi
 {
@@ -19,6 +21,8 @@ namespace ActiveKonveksi
             DevExpress.Skins.SkinManager.EnableFormSkins();
             DevExpress.UserSkins.BonusSkins.Register();
             UserLookAndFeel.Default.SetSkinStyle("DevExpress Style");
+
+            Thread.CurrentThread.CurrentCulture = CultureInfo.GetCultureInfo("id-ID");
 
             Application.Run(new MainForm());
         }
