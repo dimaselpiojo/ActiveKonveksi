@@ -31,6 +31,7 @@ namespace ActiveKonveksi.Module
             DataTable dt = lc.gridvBarang();
             gridBarang.DataSource = dt;
             gridViewBarang.PopulateColumns();
+            gridViewBarang.Columns["Id"].Visible = false;
             gridViewBarang.ShowEditor();
             gridViewBarang.BestFitColumns();
         }

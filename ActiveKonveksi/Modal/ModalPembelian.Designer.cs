@@ -343,6 +343,9 @@
             this.spinTotal.Name = "spinTotal";
             this.spinTotal.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.spinTotal.Properties.DisplayFormat.FormatString = "C2";
+            this.spinTotal.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.spinTotal.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
             this.spinTotal.Size = new System.Drawing.Size(127, 20);
             this.spinTotal.StyleController = this.layoutControl1;
             this.spinTotal.TabIndex = 12;
@@ -359,6 +362,8 @@
             this.spinNetto.Name = "spinNetto";
             this.spinNetto.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.spinNetto.Properties.DisplayFormat.FormatString = "C2";
+            this.spinNetto.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.spinNetto.Size = new System.Drawing.Size(125, 20);
             this.spinNetto.StyleController = this.layoutControl1;
             this.spinNetto.TabIndex = 11;
@@ -374,6 +379,8 @@
             this.spinBeli.Name = "spinBeli";
             this.spinBeli.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.spinBeli.Properties.DisplayFormat.FormatString = "C2";
+            this.spinBeli.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.spinBeli.Size = new System.Drawing.Size(121, 20);
             this.spinBeli.StyleController = this.layoutControl1;
             this.spinBeli.TabIndex = 8;

@@ -25,7 +25,7 @@ namespace ActiveKonveksi.Controller
         #region Tabel Barang
         public DataTable gridvBarang()
         {
-            string SQL = "SELECT Kode, Nama, Kategori, Jumlah, Satuan, HargaBeli, HargaJual, Diskon from vbarang ";
+            string SQL = "SELECT Id, Kode, Nama, Kategori, Jumlah, Satuan, HargaBeli, HargaJual, Diskon from vbarang ";
             ADOHelper h = new ADOHelper();
             DataTable dt = h.ListByQuery(SQL);
             return dt;

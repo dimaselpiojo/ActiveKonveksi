@@ -15,17 +15,35 @@ namespace ActiveKonveksi.Modal
 {
     public partial class ModalPembelian : DevExpress.XtraEditors.XtraForm
     {
+        private DataTable dt;
         public ModalPembelian()
         {
             InitializeComponent();
+            gridPembelian.DataSource = CreateTable(1);
+            gridViewPembelian.Columns["Id"].Visible = false;
+            gridPembelian.DataSource = dt;
         }
 
+        private DataTable CreateTable(int RowCount)
+        {
+            dt = new DataTable();
+            dt.Columns.Add("Id", Type.GetType("System.Int32"));
+            dt.Columns.Add("Kode", Type.GetType("System.String"));
+            dt.Columns.Add("Nama", Type.GetType("System.String"));
+            dt.Columns.Add("Jumlah", Type.GetType("System.Int32"));
+            dt.Columns.Add("Satuan", Type.GetType("System.String"));
+            dt.Columns.Add("HargaBeli", Type.GetType("System.Double"));
+            dt.Columns.Add("Diskon", Type.GetType("System.Double"));
+            dt.Columns.Add("HargaBersih", Type.GetType("System.Double"));
+            dt.Columns.Add("Total", Type.GetType("System.Double"));
+            return dt;
+        }
         private void ModalPembelian_Load(object sender, EventArgs e)
         {
             dateTanggal.DateTime = DateTime.Now;
             _lookKredit();
             _lookSupplier();
-            _gridLookKode();
+            _searchLookKode();
             _lookUpSatuan();
             spinDisc.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Default;
             spinJumlah.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Default;
@@ -56,13 +74,15 @@ namespace ActiveKonveksi.Modal
             lookSupplier.ItemIndex = 0;
             lookSupplier.Properties.BestFitMode = BestFitMode.BestFitResizePopup;
         }
-        public void _gridLookKode()
+        public void _searchLookKode()
         {
             ListController lc = new ListController();
             DataTable dt = lc.gridvBarang();
             searchLookKode.Properties.DataSource = dt;
-            searchLookKode.Properties.DisplayMember = "Nama";
-            searchLookKode.Properties.ValueMember = "Kode";
+            searchLookKode.Properties.PopulateViewColumns();
+            searchLookKode.Properties.DisplayMember = "Kode";
+            searchLookKode.Properties.ValueMember = "Id";
+            searchLookKode.Properties.View.Columns["Id"].Visible = false;
             searchLookKode.Properties.PopupFindMode = FindMode.Always;
             searchLookKode.Properties.BestFitMode = BestFitMode.BestFitResizePopup;
         }
@@ -87,25 +107,61 @@ namespace ActiveKonveksi.Modal
             object HargaBeli = this.searchLookKode.Properties.View.GetFocusedRowCellValue("HargaBeli");
             object Satuan = this.searchLookKode.Properties.View.GetFocusedRowCellValue("Satuan");
             textNama.Text = Nama.ToString();
-            spinBeli.Value = (decimal)HargaBeli;
+            spinBeli.Value = Convert.ToDecimal(HargaBeli);
             lookSatuan.Text = Satuan.ToString();
-        }
 
+            double netto = Convert.ToDouble(spinBeli.Value - ((spinDisc.Value / 100) * spinBeli.Value));
+            spinNetto.Value = Math.Round(Convert.ToDecimal(netto), 2);
+            spinTotal.Value = spinNetto.Value * spinJumlah.Value;
+        }
  
         private void spinJumlah_EditValueChanged(object sender, EventArgs e)
         {
-            object jum = spinJumlah.Value;
-            object dis = spinDisc.Value;
-            spinNetto.Value = spinBeli.Value - ((spinDisc.Value / 100) * spinBeli.Value);
+            double netto = Convert.ToDouble(spinBeli.Value - ((spinDisc.Value / 100) * spinBeli.Value));
+            spinNetto.Value = Math.Round(Convert.ToDecimal(netto), 2);
             spinTotal.Value = spinNetto.Value * spinJumlah.Value;
         }
 
         private void spinEdit6_EditValueChanged(object sender, EventArgs e)
         {
-            object jum = spinJumlah.Value;
-            object dis = spinDisc.Value;
-            spinNetto.Value = spinBeli.Value - ((spinDisc.Value / 100) * spinBeli.Value);
+            double netto = Convert.ToDouble(spinBeli.Value - ((spinDisc.Value / 100) * spinBeli.Value));
+            spinNetto.Value = Math.Round(Convert.ToDecimal(netto),2);
             spinTotal.Value = spinNetto.Value * spinJumlah.Value;
+        }
+
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            
+            //if (keyData == (Keys.Control | Keys.F)) #ctrl+f
+            if (keyData == (Keys.Enter))
+            {
+                object Id = this.searchLookKode.Properties.View.GetFocusedRowCellValue("Id");
+                object Satuan = lookSatuan.EditValue;
+                if ((searchLookKode.Text != "" ) && (searchLookKode.Text != " ") && (textNama.Text != "") && (textNama.Text != " "))
+                {
+                    dt.Rows.Add(new object[]
+                    {
+                       (Int32)Id,
+                       searchLookKode.Text,
+                       textNama.Text,
+                       (Int32)spinJumlah.Value,
+                       lookSatuan.Text,
+                       spinBeli.Value,
+                       spinDisc.Value,
+                       spinNetto.Value,
+                       spinTotal.Value
+                       
+                });
+                    gridViewPembelian.BestFitColumns();
+                    //textSubCategory.Text = "";
+                }
+                else
+                {
+                    XtraMessageBox.Show("Silahkan lengkapi terlebih dahulu");
+                }
+
+            }
+            return base.ProcessCmdKey(ref msg, keyData);
         }
 
     }
