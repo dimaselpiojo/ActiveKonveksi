@@ -28,18 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ModalPembelian));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.dateJatuhTempo = new DevExpress.XtraEditors.DateEdit();
+            this.btnAddSupplier = new DevExpress.XtraEditors.SimpleButton();
+            this.btnNew = new DevExpress.XtraEditors.SimpleButton();
+            this.btnPrint = new DevExpress.XtraEditors.SimpleButton();
             this.spinDisc = new DevExpress.XtraEditors.SpinEdit();
             this.searchLookKode = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
             this.btnOk = new DevExpress.XtraEditors.SimpleButton();
-            this.spinEdit5 = new DevExpress.XtraEditors.SpinEdit();
-            this.spinEdit4 = new DevExpress.XtraEditors.SpinEdit();
+            this.spinKembalian = new DevExpress.XtraEditors.SpinEdit();
+            this.spinTunai = new DevExpress.XtraEditors.SpinEdit();
             this.spinEdit3 = new DevExpress.XtraEditors.SpinEdit();
-            this.spinEdit2 = new DevExpress.XtraEditors.SpinEdit();
+            this.spinGrandTotal = new DevExpress.XtraEditors.SpinEdit();
             this.spinDiskon = new DevExpress.XtraEditors.SpinEdit();
-            this.spinEdit1 = new DevExpress.XtraEditors.SpinEdit();
+            this.spinSubTotal = new DevExpress.XtraEditors.SpinEdit();
             this.gridPembelian = new DevExpress.XtraGrid.GridControl();
             this.gridViewPembelian = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.spinTotal = new DevExpress.XtraEditors.SpinEdit();
@@ -68,30 +74,40 @@
             this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem4 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.spinSubTotal = new DevExpress.XtraLayout.LayoutControlItem();
+            this.laySubTotal = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem14 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.spinGrandTotal = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layGrantotal = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem15 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem5 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.spinTunai = new DevExpress.XtraLayout.LayoutControlItem();
-            this.spinKembali = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem16 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.laytunai = new DevExpress.XtraLayout.LayoutControlItem();
+            this.laykembalian = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem17 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem16 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem18 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem6 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.dis = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem7 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.layoutControlItem19 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutDateJatuhTempo = new DevExpress.XtraLayout.LayoutControlItem();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dateJatuhTempo.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateJatuhTempo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinDisc.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookKode.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spinEdit5.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spinEdit4.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spinKembalian.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spinTunai.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinEdit3.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spinEdit2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spinGrandTotal.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinDiskon.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spinEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spinSubTotal.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridPembelian)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewPembelian)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinTotal.Properties)).BeginInit();
@@ -121,33 +137,43 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spinSubTotal)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.laySubTotal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spinGrandTotal)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layGrantotal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spinTunai)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spinKembali)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.laytunai)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.laykembalian)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem17)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem18)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dis)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem19)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutDateJatuhTempo)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.dateJatuhTempo);
+            this.layoutControl1.Controls.Add(this.btnAddSupplier);
+            this.layoutControl1.Controls.Add(this.btnNew);
+            this.layoutControl1.Controls.Add(this.btnPrint);
             this.layoutControl1.Controls.Add(this.spinDisc);
             this.layoutControl1.Controls.Add(this.searchLookKode);
             this.layoutControl1.Controls.Add(this.btnCancel);
             this.layoutControl1.Controls.Add(this.btnOk);
-            this.layoutControl1.Controls.Add(this.spinEdit5);
-            this.layoutControl1.Controls.Add(this.spinEdit4);
+            this.layoutControl1.Controls.Add(this.spinKembalian);
+            this.layoutControl1.Controls.Add(this.spinTunai);
             this.layoutControl1.Controls.Add(this.spinEdit3);
-            this.layoutControl1.Controls.Add(this.spinEdit2);
+            this.layoutControl1.Controls.Add(this.spinGrandTotal);
             this.layoutControl1.Controls.Add(this.spinDiskon);
-            this.layoutControl1.Controls.Add(this.spinEdit1);
+            this.layoutControl1.Controls.Add(this.spinSubTotal);
             this.layoutControl1.Controls.Add(this.gridPembelian);
             this.layoutControl1.Controls.Add(this.spinTotal);
             this.layoutControl1.Controls.Add(this.spinNetto);
@@ -162,10 +188,57 @@
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
             this.layoutControl1.Name = "layoutControl1";
+            this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(191, 158, 250, 350);
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(1089, 503);
+            this.layoutControl1.Size = new System.Drawing.Size(1089, 618);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // dateJatuhTempo
+            // 
+            this.dateJatuhTempo.EditValue = null;
+            this.dateJatuhTempo.Location = new System.Drawing.Point(82, 86);
+            this.dateJatuhTempo.Name = "dateJatuhTempo";
+            this.dateJatuhTempo.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateJatuhTempo.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateJatuhTempo.Size = new System.Drawing.Size(188, 20);
+            this.dateJatuhTempo.StyleController = this.layoutControl1;
+            this.dateJatuhTempo.TabIndex = 28;
+            // 
+            // btnAddSupplier
+            // 
+            this.btnAddSupplier.Image = ((System.Drawing.Image)(resources.GetObject("btnAddSupplier.Image")));
+            this.btnAddSupplier.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.btnAddSupplier.Location = new System.Drawing.Point(608, 12);
+            this.btnAddSupplier.Name = "btnAddSupplier";
+            this.btnAddSupplier.Size = new System.Drawing.Size(24, 22);
+            this.btnAddSupplier.StyleController = this.layoutControl1;
+            this.btnAddSupplier.TabIndex = 27;
+            this.btnAddSupplier.ToolTip = "Menambah data supplier";
+            this.btnAddSupplier.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Information;
+            this.btnAddSupplier.ToolTipTitle = "Add Supplier";
+            this.btnAddSupplier.Click += new System.EventHandler(this.btnAddSupplier_Click);
+            // 
+            // btnNew
+            // 
+            this.btnNew.Location = new System.Drawing.Point(454, 477);
+            this.btnNew.Name = "btnNew";
+            this.btnNew.Size = new System.Drawing.Size(124, 56);
+            this.btnNew.StyleController = this.layoutControl1;
+            this.btnNew.TabIndex = 26;
+            this.btnNew.Text = "New";
+            this.btnNew.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // btnPrint
+            // 
+            this.btnPrint.Location = new System.Drawing.Point(454, 417);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(124, 56);
+            this.btnPrint.StyleController = this.layoutControl1;
+            this.btnPrint.TabIndex = 25;
+            this.btnPrint.Text = "Print";
             // 
             // spinDisc
             // 
@@ -174,7 +247,7 @@
             0,
             0,
             0});
-            this.spinDisc.Location = new System.Drawing.Point(750, 121);
+            this.spinDisc.Location = new System.Drawing.Point(750, 136);
             this.spinDisc.Name = "spinDisc";
             this.spinDisc.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -186,7 +259,7 @@
             // searchLookKode
             // 
             this.searchLookKode.EditValue = "";
-            this.searchLookKode.Location = new System.Drawing.Point(12, 121);
+            this.searchLookKode.Location = new System.Drawing.Point(12, 136);
             this.searchLookKode.Name = "searchLookKode";
             this.searchLookKode.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -206,52 +279,56 @@
             // btnCancel
             // 
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(178, 469);
+            this.btnCancel.Location = new System.Drawing.Point(328, 477);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(168, 22);
+            this.btnCancel.Size = new System.Drawing.Size(122, 56);
             this.btnCancel.StyleController = this.layoutControl1;
             this.btnCancel.TabIndex = 21;
             this.btnCancel.Text = "Cancel";
             // 
             // btnOk
             // 
-            this.btnOk.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnOk.Location = new System.Drawing.Point(12, 469);
+            this.btnOk.Location = new System.Drawing.Point(328, 417);
             this.btnOk.Name = "btnOk";
-            this.btnOk.Size = new System.Drawing.Size(162, 22);
+            this.btnOk.Size = new System.Drawing.Size(122, 56);
             this.btnOk.StyleController = this.layoutControl1;
             this.btnOk.TabIndex = 20;
             this.btnOk.Text = "Save";
+            this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
             // 
-            // spinEdit5
+            // spinKembalian
             // 
-            this.spinEdit5.EditValue = new decimal(new int[] {
+            this.spinKembalian.EditValue = new decimal(new int[] {
             0,
             0,
             0,
             0});
-            this.spinEdit5.Location = new System.Drawing.Point(94, 433);
-            this.spinEdit5.Name = "spinEdit5";
-            this.spinEdit5.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.spinKembalian.Enabled = false;
+            this.spinKembalian.Location = new System.Drawing.Point(94, 523);
+            this.spinKembalian.Name = "spinKembalian";
+            this.spinKembalian.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.spinEdit5.Size = new System.Drawing.Size(253, 20);
-            this.spinEdit5.StyleController = this.layoutControl1;
-            this.spinEdit5.TabIndex = 19;
+            this.spinKembalian.Size = new System.Drawing.Size(230, 20);
+            this.spinKembalian.StyleController = this.layoutControl1;
+            this.spinKembalian.TabIndex = 19;
             // 
-            // spinEdit4
+            // spinTunai
             // 
-            this.spinEdit4.EditValue = new decimal(new int[] {
+            this.spinTunai.EditValue = new decimal(new int[] {
             0,
             0,
             0,
             0});
-            this.spinEdit4.Location = new System.Drawing.Point(94, 409);
-            this.spinEdit4.Name = "spinEdit4";
-            this.spinEdit4.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.spinTunai.Location = new System.Drawing.Point(94, 489);
+            this.spinTunai.Name = "spinTunai";
+            this.spinTunai.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.spinTunai.Properties.Appearance.Options.UseFont = true;
+            this.spinTunai.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.spinEdit4.Size = new System.Drawing.Size(253, 20);
-            this.spinEdit4.StyleController = this.layoutControl1;
-            this.spinEdit4.TabIndex = 18;
+            this.spinTunai.Size = new System.Drawing.Size(230, 32);
+            this.spinTunai.StyleController = this.layoutControl1;
+            this.spinTunai.TabIndex = 18;
+            this.spinTunai.EditValueChanged += new System.EventHandler(this.spinTunai_EditValueChanged);
             // 
             // spinEdit3
             // 
@@ -260,28 +337,29 @@
             0,
             0,
             0});
-            this.spinEdit3.Location = new System.Drawing.Point(238, 361);
+            this.spinEdit3.Location = new System.Drawing.Point(224, 441);
             this.spinEdit3.Name = "spinEdit3";
             this.spinEdit3.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.spinEdit3.Size = new System.Drawing.Size(109, 20);
+            this.spinEdit3.Size = new System.Drawing.Size(100, 20);
             this.spinEdit3.StyleController = this.layoutControl1;
             this.spinEdit3.TabIndex = 16;
             // 
-            // spinEdit2
+            // spinGrandTotal
             // 
-            this.spinEdit2.EditValue = new decimal(new int[] {
+            this.spinGrandTotal.EditValue = new decimal(new int[] {
             0,
             0,
             0,
             0});
-            this.spinEdit2.Location = new System.Drawing.Point(94, 385);
-            this.spinEdit2.Name = "spinEdit2";
-            this.spinEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.spinGrandTotal.Enabled = false;
+            this.spinGrandTotal.Location = new System.Drawing.Point(94, 465);
+            this.spinGrandTotal.Name = "spinGrandTotal";
+            this.spinGrandTotal.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.spinEdit2.Size = new System.Drawing.Size(253, 20);
-            this.spinEdit2.StyleController = this.layoutControl1;
-            this.spinEdit2.TabIndex = 17;
+            this.spinGrandTotal.Size = new System.Drawing.Size(230, 20);
+            this.spinGrandTotal.StyleController = this.layoutControl1;
+            this.spinGrandTotal.TabIndex = 17;
             // 
             // spinDiskon
             // 
@@ -290,35 +368,36 @@
             0,
             0,
             0});
-            this.spinDiskon.Location = new System.Drawing.Point(94, 361);
+            this.spinDiskon.Location = new System.Drawing.Point(94, 441);
             this.spinDiskon.Name = "spinDiskon";
             this.spinDiskon.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.spinDiskon.Size = new System.Drawing.Size(101, 20);
+            this.spinDiskon.Size = new System.Drawing.Size(89, 20);
             this.spinDiskon.StyleController = this.layoutControl1;
             this.spinDiskon.TabIndex = 15;
             // 
-            // spinEdit1
+            // spinSubTotal
             // 
-            this.spinEdit1.EditValue = new decimal(new int[] {
+            this.spinSubTotal.EditValue = new decimal(new int[] {
             0,
             0,
             0,
             0});
-            this.spinEdit1.Location = new System.Drawing.Point(94, 337);
-            this.spinEdit1.Name = "spinEdit1";
-            this.spinEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.spinSubTotal.Enabled = false;
+            this.spinSubTotal.Location = new System.Drawing.Point(94, 417);
+            this.spinSubTotal.Name = "spinSubTotal";
+            this.spinSubTotal.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.spinEdit1.Size = new System.Drawing.Size(253, 20);
-            this.spinEdit1.StyleController = this.layoutControl1;
-            this.spinEdit1.TabIndex = 14;
+            this.spinSubTotal.Size = new System.Drawing.Size(230, 20);
+            this.spinSubTotal.StyleController = this.layoutControl1;
+            this.spinSubTotal.TabIndex = 14;
             // 
             // gridPembelian
             // 
-            this.gridPembelian.Location = new System.Drawing.Point(12, 145);
+            this.gridPembelian.Location = new System.Drawing.Point(12, 160);
             this.gridPembelian.MainView = this.gridViewPembelian;
             this.gridPembelian.Name = "gridPembelian";
-            this.gridPembelian.Size = new System.Drawing.Size(1065, 176);
+            this.gridPembelian.Size = new System.Drawing.Size(1065, 241);
             this.gridPembelian.TabIndex = 13;
             this.gridPembelian.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewPembelian});
@@ -330,6 +409,7 @@
             this.gridViewPembelian.OptionsBehavior.Editable = false;
             this.gridViewPembelian.OptionsView.ColumnAutoWidth = false;
             this.gridViewPembelian.OptionsView.ShowFooter = true;
+            this.gridViewPembelian.PopupMenuShowing += new DevExpress.XtraGrid.Views.Grid.PopupMenuShowingEventHandler(this.gridViewPembelian_PopupMenuShowing);
             // 
             // spinTotal
             // 
@@ -339,7 +419,7 @@
             0,
             0});
             this.spinTotal.Enabled = false;
-            this.spinTotal.Location = new System.Drawing.Point(950, 121);
+            this.spinTotal.Location = new System.Drawing.Point(950, 136);
             this.spinTotal.Name = "spinTotal";
             this.spinTotal.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -358,7 +438,7 @@
             0,
             0});
             this.spinNetto.Enabled = false;
-            this.spinNetto.Location = new System.Drawing.Point(821, 121);
+            this.spinNetto.Location = new System.Drawing.Point(821, 136);
             this.spinNetto.Name = "spinNetto";
             this.spinNetto.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -375,19 +455,17 @@
             0,
             0,
             0});
-            this.spinBeli.Location = new System.Drawing.Point(551, 121);
+            this.spinBeli.Location = new System.Drawing.Point(551, 136);
             this.spinBeli.Name = "spinBeli";
             this.spinBeli.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.spinBeli.Properties.DisplayFormat.FormatString = "C2";
-            this.spinBeli.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.spinBeli.Size = new System.Drawing.Size(121, 20);
             this.spinBeli.StyleController = this.layoutControl1;
             this.spinBeli.TabIndex = 8;
             // 
             // textNama
             // 
-            this.textNama.Location = new System.Drawing.Point(321, 121);
+            this.textNama.Location = new System.Drawing.Point(321, 136);
             this.textNama.Name = "textNama";
             this.textNama.Size = new System.Drawing.Size(226, 20);
             this.textNama.StyleController = this.layoutControl1;
@@ -400,7 +478,7 @@
             0,
             0,
             0});
-            this.spinJumlah.Location = new System.Drawing.Point(250, 121);
+            this.spinJumlah.Location = new System.Drawing.Point(250, 136);
             this.spinJumlah.Name = "spinJumlah";
             this.spinJumlah.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -421,17 +499,18 @@
             // 
             // lookTunaiKredit
             // 
-            this.lookTunaiKredit.Location = new System.Drawing.Point(82, 60);
+            this.lookTunaiKredit.Location = new System.Drawing.Point(82, 62);
             this.lookTunaiKredit.Name = "lookTunaiKredit";
             this.lookTunaiKredit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.lookTunaiKredit.Size = new System.Drawing.Size(188, 20);
             this.lookTunaiKredit.StyleController = this.layoutControl1;
             this.lookTunaiKredit.TabIndex = 4;
+            this.lookTunaiKredit.EditValueChanged += new System.EventHandler(this.lookTunaiKredit_EditValueChanged);
             // 
             // textFaktur
             // 
-            this.textFaktur.Location = new System.Drawing.Point(82, 36);
+            this.textFaktur.Location = new System.Drawing.Point(82, 38);
             this.textFaktur.Name = "textFaktur";
             this.textFaktur.Size = new System.Drawing.Size(188, 20);
             this.textFaktur.StyleController = this.layoutControl1;
@@ -457,7 +536,7 @@
             0,
             0,
             0});
-            this.lookSatuan.Location = new System.Drawing.Point(676, 121);
+            this.lookSatuan.Location = new System.Drawing.Point(676, 136);
             this.lookSatuan.Name = "lookSatuan";
             this.lookSatuan.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -487,14 +566,14 @@
             this.emptySpaceItem3,
             this.emptySpaceItem4,
             this.layoutControlGroup2,
-            this.layoutControlItem16,
-            this.layoutControlItem17,
-            this.emptySpaceItem6,
             this.layoutControlItem5,
-            this.dis});
+            this.dis,
+            this.emptySpaceItem7,
+            this.layoutControlItem19,
+            this.layoutDateJatuhTempo});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(1089, 503);
+            this.layoutControlGroup1.Name = "Root";
+            this.layoutControlGroup1.Size = new System.Drawing.Size(1089, 618);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem1
@@ -502,14 +581,14 @@
             this.layoutControlItem1.Control = this.dateTanggal;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(262, 24);
+            this.layoutControlItem1.Size = new System.Drawing.Size(262, 26);
             this.layoutControlItem1.Text = "Tanggal";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(67, 13);
             // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.textFaktur;
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 24);
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 26);
             this.layoutControlItem2.Name = "layoutControlItem2";
             this.layoutControlItem2.Size = new System.Drawing.Size(262, 24);
             this.layoutControlItem2.Text = "No. Faktur";
@@ -518,7 +597,7 @@
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.lookTunaiKredit;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 48);
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 50);
             this.layoutControlItem3.Name = "layoutControlItem3";
             this.layoutControlItem3.Size = new System.Drawing.Size(262, 24);
             this.layoutControlItem3.Text = "Tunai/Kredit";
@@ -529,22 +608,22 @@
             this.layoutControlItem4.Control = this.lookSupplier;
             this.layoutControlItem4.Location = new System.Drawing.Point(262, 0);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(334, 24);
+            this.layoutControlItem4.Size = new System.Drawing.Size(334, 26);
             this.layoutControlItem4.Text = "Supplier";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(67, 13);
             // 
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 72);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 98);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(1069, 21);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(1069, 10);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem6
             // 
             this.layoutControlItem6.Control = this.spinJumlah;
-            this.layoutControlItem6.Location = new System.Drawing.Point(238, 93);
+            this.layoutControlItem6.Location = new System.Drawing.Point(238, 108);
             this.layoutControlItem6.Name = "layoutControlItem6";
             this.layoutControlItem6.Size = new System.Drawing.Size(71, 40);
             this.layoutControlItem6.Text = "Jumlah";
@@ -555,7 +634,7 @@
             // 
             this.layoutControlItem7.Control = this.textNama;
             this.layoutControlItem7.Enabled = false;
-            this.layoutControlItem7.Location = new System.Drawing.Point(309, 93);
+            this.layoutControlItem7.Location = new System.Drawing.Point(309, 108);
             this.layoutControlItem7.Name = "layoutControlItem7";
             this.layoutControlItem7.Size = new System.Drawing.Size(230, 40);
             this.layoutControlItem7.Text = "Nama";
@@ -565,7 +644,7 @@
             // layoutControlItem8
             // 
             this.layoutControlItem8.Control = this.spinBeli;
-            this.layoutControlItem8.Location = new System.Drawing.Point(539, 93);
+            this.layoutControlItem8.Location = new System.Drawing.Point(539, 108);
             this.layoutControlItem8.Name = "layoutControlItem8";
             this.layoutControlItem8.Size = new System.Drawing.Size(125, 40);
             this.layoutControlItem8.Text = "Harga Beli";
@@ -576,7 +655,7 @@
             // 
             this.layoutControlItem9.Control = this.lookSatuan;
             this.layoutControlItem9.Enabled = false;
-            this.layoutControlItem9.Location = new System.Drawing.Point(664, 93);
+            this.layoutControlItem9.Location = new System.Drawing.Point(664, 108);
             this.layoutControlItem9.Name = "layoutControlItem9";
             this.layoutControlItem9.Size = new System.Drawing.Size(74, 40);
             this.layoutControlItem9.Text = "Satuan";
@@ -586,7 +665,7 @@
             // layoutControlItem11
             // 
             this.layoutControlItem11.Control = this.spinNetto;
-            this.layoutControlItem11.Location = new System.Drawing.Point(809, 93);
+            this.layoutControlItem11.Location = new System.Drawing.Point(809, 108);
             this.layoutControlItem11.Name = "layoutControlItem11";
             this.layoutControlItem11.Size = new System.Drawing.Size(129, 40);
             this.layoutControlItem11.Text = "Netto";
@@ -596,7 +675,7 @@
             // layoutControlItem12
             // 
             this.layoutControlItem12.Control = this.spinTotal;
-            this.layoutControlItem12.Location = new System.Drawing.Point(938, 93);
+            this.layoutControlItem12.Location = new System.Drawing.Point(938, 108);
             this.layoutControlItem12.Name = "layoutControlItem12";
             this.layoutControlItem12.Size = new System.Drawing.Size(131, 40);
             this.layoutControlItem12.Text = "Total";
@@ -606,144 +685,189 @@
             // layoutControlItem13
             // 
             this.layoutControlItem13.Control = this.gridPembelian;
-            this.layoutControlItem13.Location = new System.Drawing.Point(0, 133);
+            this.layoutControlItem13.Location = new System.Drawing.Point(0, 148);
             this.layoutControlItem13.Name = "layoutControlItem13";
-            this.layoutControlItem13.Size = new System.Drawing.Size(1069, 180);
+            this.layoutControlItem13.Size = new System.Drawing.Size(1069, 245);
             this.layoutControlItem13.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem13.TextVisible = false;
             // 
             // emptySpaceItem3
             // 
             this.emptySpaceItem3.AllowHotTrack = false;
-            this.emptySpaceItem3.Location = new System.Drawing.Point(596, 0);
+            this.emptySpaceItem3.Location = new System.Drawing.Point(624, 0);
             this.emptySpaceItem3.Name = "emptySpaceItem3";
-            this.emptySpaceItem3.Size = new System.Drawing.Size(473, 24);
+            this.emptySpaceItem3.Size = new System.Drawing.Size(445, 26);
             this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem4
             // 
             this.emptySpaceItem4.AllowHotTrack = false;
-            this.emptySpaceItem4.Location = new System.Drawing.Point(262, 24);
+            this.emptySpaceItem4.Location = new System.Drawing.Point(262, 26);
             this.emptySpaceItem4.Name = "emptySpaceItem4";
-            this.emptySpaceItem4.Size = new System.Drawing.Size(807, 48);
+            this.emptySpaceItem4.Size = new System.Drawing.Size(807, 72);
             this.emptySpaceItem4.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlGroup2
             // 
             this.layoutControlGroup2.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.emptySpaceItem2,
-            this.spinSubTotal,
+            this.laySubTotal,
             this.layoutControlItem14,
-            this.spinGrandTotal,
+            this.layGrantotal,
             this.layoutControlItem15,
             this.emptySpaceItem5,
-            this.spinTunai,
-            this.spinKembali});
-            this.layoutControlGroup2.Location = new System.Drawing.Point(0, 313);
+            this.laytunai,
+            this.laykembalian,
+            this.layoutControlItem17,
+            this.layoutControlItem16,
+            this.layoutControlItem18,
+            this.layoutControlItem10,
+            this.emptySpaceItem2,
+            this.emptySpaceItem6});
+            this.layoutControlGroup2.Location = new System.Drawing.Point(0, 393);
             this.layoutControlGroup2.Name = "layoutControlGroup2";
-            this.layoutControlGroup2.Size = new System.Drawing.Size(1069, 144);
+            this.layoutControlGroup2.Size = new System.Drawing.Size(1069, 154);
             this.layoutControlGroup2.TextVisible = false;
             // 
-            // emptySpaceItem2
+            // laySubTotal
             // 
-            this.emptySpaceItem2.AllowHotTrack = false;
-            this.emptySpaceItem2.Location = new System.Drawing.Point(327, 0);
-            this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(718, 120);
-            this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // spinSubTotal
-            // 
-            this.spinSubTotal.Control = this.spinEdit1;
-            this.spinSubTotal.Location = new System.Drawing.Point(0, 0);
-            this.spinSubTotal.Name = "spinSubTotal";
-            this.spinSubTotal.Size = new System.Drawing.Size(327, 24);
-            this.spinSubTotal.Text = "Sub Total";
-            this.spinSubTotal.TextSize = new System.Drawing.Size(67, 13);
+            this.laySubTotal.Control = this.spinSubTotal;
+            this.laySubTotal.Location = new System.Drawing.Point(0, 0);
+            this.laySubTotal.Name = "laySubTotal";
+            this.laySubTotal.Size = new System.Drawing.Size(304, 24);
+            this.laySubTotal.Text = "Sub Total";
+            this.laySubTotal.TextSize = new System.Drawing.Size(67, 13);
             // 
             // layoutControlItem14
             // 
             this.layoutControlItem14.Control = this.spinDiskon;
             this.layoutControlItem14.Location = new System.Drawing.Point(0, 24);
             this.layoutControlItem14.Name = "layoutControlItem14";
-            this.layoutControlItem14.Size = new System.Drawing.Size(175, 24);
+            this.layoutControlItem14.Size = new System.Drawing.Size(163, 24);
             this.layoutControlItem14.Text = "Diskon";
             this.layoutControlItem14.TextSize = new System.Drawing.Size(67, 13);
+            this.layoutControlItem14.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
             // 
-            // spinGrandTotal
+            // layGrantotal
             // 
-            this.spinGrandTotal.Control = this.spinEdit2;
-            this.spinGrandTotal.Location = new System.Drawing.Point(0, 48);
-            this.spinGrandTotal.Name = "spinGrandTotal";
-            this.spinGrandTotal.Size = new System.Drawing.Size(327, 24);
-            this.spinGrandTotal.Text = "Grand Total";
-            this.spinGrandTotal.TextSize = new System.Drawing.Size(67, 13);
+            this.layGrantotal.Control = this.spinGrandTotal;
+            this.layGrantotal.Location = new System.Drawing.Point(0, 48);
+            this.layGrantotal.Name = "layGrantotal";
+            this.layGrantotal.Size = new System.Drawing.Size(304, 24);
+            this.layGrantotal.Text = "Grand Total";
+            this.layGrantotal.TextSize = new System.Drawing.Size(67, 13);
             // 
             // layoutControlItem15
             // 
             this.layoutControlItem15.Control = this.spinEdit3;
-            this.layoutControlItem15.Location = new System.Drawing.Point(214, 24);
+            this.layoutControlItem15.Location = new System.Drawing.Point(200, 24);
             this.layoutControlItem15.Name = "layoutControlItem15";
-            this.layoutControlItem15.Size = new System.Drawing.Size(113, 24);
+            this.layoutControlItem15.Size = new System.Drawing.Size(104, 24);
+            this.layoutControlItem15.Text = "layoutcontrol";
             this.layoutControlItem15.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem15.TextVisible = false;
+            this.layoutControlItem15.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
             // 
             // emptySpaceItem5
             // 
             this.emptySpaceItem5.AllowHotTrack = false;
-            this.emptySpaceItem5.Location = new System.Drawing.Point(175, 24);
+            this.emptySpaceItem5.Location = new System.Drawing.Point(163, 24);
             this.emptySpaceItem5.Name = "emptySpaceItem5";
-            this.emptySpaceItem5.Size = new System.Drawing.Size(39, 24);
+            this.emptySpaceItem5.Size = new System.Drawing.Size(37, 24);
             this.emptySpaceItem5.TextSize = new System.Drawing.Size(0, 0);
+            this.emptySpaceItem5.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
             // 
-            // spinTunai
+            // laytunai
             // 
-            this.spinTunai.Control = this.spinEdit4;
-            this.spinTunai.Location = new System.Drawing.Point(0, 72);
-            this.spinTunai.Name = "spinTunai";
-            this.spinTunai.Size = new System.Drawing.Size(327, 24);
-            this.spinTunai.Text = "Tunai";
-            this.spinTunai.TextSize = new System.Drawing.Size(67, 13);
+            this.laytunai.Control = this.spinTunai;
+            this.laytunai.Location = new System.Drawing.Point(0, 72);
+            this.laytunai.MinSize = new System.Drawing.Size(124, 24);
+            this.laytunai.Name = "laytunai";
+            this.laytunai.Size = new System.Drawing.Size(304, 24);
+            this.laytunai.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.laytunai.Text = "Tunai";
+            this.laytunai.TextSize = new System.Drawing.Size(67, 13);
             // 
-            // spinKembali
+            // laykembalian
             // 
-            this.spinKembali.Control = this.spinEdit5;
-            this.spinKembali.Location = new System.Drawing.Point(0, 96);
-            this.spinKembali.Name = "spinKembali";
-            this.spinKembali.Size = new System.Drawing.Size(327, 24);
-            this.spinKembali.Text = "Kembalian";
-            this.spinKembali.TextSize = new System.Drawing.Size(67, 13);
-            // 
-            // layoutControlItem16
-            // 
-            this.layoutControlItem16.Control = this.btnOk;
-            this.layoutControlItem16.Location = new System.Drawing.Point(0, 457);
-            this.layoutControlItem16.Name = "layoutControlItem16";
-            this.layoutControlItem16.Size = new System.Drawing.Size(166, 26);
-            this.layoutControlItem16.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem16.TextVisible = false;
+            this.laykembalian.Control = this.spinKembalian;
+            this.laykembalian.Location = new System.Drawing.Point(0, 106);
+            this.laykembalian.Name = "laykembalian";
+            this.laykembalian.Size = new System.Drawing.Size(304, 24);
+            this.laykembalian.Text = "Kembalian";
+            this.laykembalian.TextSize = new System.Drawing.Size(67, 13);
             // 
             // layoutControlItem17
             // 
             this.layoutControlItem17.Control = this.btnCancel;
-            this.layoutControlItem17.Location = new System.Drawing.Point(166, 457);
+            this.layoutControlItem17.Location = new System.Drawing.Point(304, 60);
+            this.layoutControlItem17.MaxSize = new System.Drawing.Size(126, 60);
+            this.layoutControlItem17.MinSize = new System.Drawing.Size(126, 60);
             this.layoutControlItem17.Name = "layoutControlItem17";
-            this.layoutControlItem17.Size = new System.Drawing.Size(172, 26);
+            this.layoutControlItem17.Size = new System.Drawing.Size(126, 70);
+            this.layoutControlItem17.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.layoutControlItem17.Text = "layCancel";
             this.layoutControlItem17.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem17.TextVisible = false;
+            // 
+            // layoutControlItem16
+            // 
+            this.layoutControlItem16.Control = this.btnOk;
+            this.layoutControlItem16.Location = new System.Drawing.Point(304, 0);
+            this.layoutControlItem16.MaxSize = new System.Drawing.Size(126, 60);
+            this.layoutControlItem16.MinSize = new System.Drawing.Size(126, 60);
+            this.layoutControlItem16.Name = "layoutControlItem16";
+            this.layoutControlItem16.Size = new System.Drawing.Size(126, 60);
+            this.layoutControlItem16.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.layoutControlItem16.Text = "laysave";
+            this.layoutControlItem16.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem16.TextVisible = false;
+            // 
+            // layoutControlItem18
+            // 
+            this.layoutControlItem18.Control = this.btnNew;
+            this.layoutControlItem18.Location = new System.Drawing.Point(430, 60);
+            this.layoutControlItem18.MaxSize = new System.Drawing.Size(128, 60);
+            this.layoutControlItem18.MinSize = new System.Drawing.Size(128, 60);
+            this.layoutControlItem18.Name = "layoutControlItem18";
+            this.layoutControlItem18.Size = new System.Drawing.Size(128, 70);
+            this.layoutControlItem18.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.layoutControlItem18.Text = "layExit";
+            this.layoutControlItem18.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem18.TextVisible = false;
+            // 
+            // layoutControlItem10
+            // 
+            this.layoutControlItem10.Control = this.btnPrint;
+            this.layoutControlItem10.Location = new System.Drawing.Point(430, 0);
+            this.layoutControlItem10.MaxSize = new System.Drawing.Size(128, 60);
+            this.layoutControlItem10.MinSize = new System.Drawing.Size(128, 60);
+            this.layoutControlItem10.Name = "layoutControlItem10";
+            this.layoutControlItem10.Size = new System.Drawing.Size(128, 60);
+            this.layoutControlItem10.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.layoutControlItem10.Text = "layPrint";
+            this.layoutControlItem10.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem10.TextVisible = false;
+            // 
+            // emptySpaceItem2
+            // 
+            this.emptySpaceItem2.AllowHotTrack = false;
+            this.emptySpaceItem2.Location = new System.Drawing.Point(558, 0);
+            this.emptySpaceItem2.Name = "emptySpaceItem2";
+            this.emptySpaceItem2.Size = new System.Drawing.Size(487, 130);
+            this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem6
             // 
             this.emptySpaceItem6.AllowHotTrack = false;
-            this.emptySpaceItem6.Location = new System.Drawing.Point(338, 457);
+            this.emptySpaceItem6.Location = new System.Drawing.Point(0, 96);
             this.emptySpaceItem6.Name = "emptySpaceItem6";
-            this.emptySpaceItem6.Size = new System.Drawing.Size(731, 26);
+            this.emptySpaceItem6.Size = new System.Drawing.Size(304, 10);
             this.emptySpaceItem6.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.searchLookKode;
-            this.layoutControlItem5.Location = new System.Drawing.Point(0, 93);
+            this.layoutControlItem5.Location = new System.Drawing.Point(0, 108);
             this.layoutControlItem5.Name = "layoutControlItem5";
             this.layoutControlItem5.Size = new System.Drawing.Size(238, 40);
             this.layoutControlItem5.Text = "Kode/Barcode";
@@ -753,18 +877,67 @@
             // dis
             // 
             this.dis.Control = this.spinDisc;
-            this.dis.Location = new System.Drawing.Point(738, 93);
+            this.dis.Location = new System.Drawing.Point(738, 108);
             this.dis.Name = "dis";
             this.dis.Size = new System.Drawing.Size(71, 40);
             this.dis.Text = "Discount (%)";
             this.dis.TextLocation = DevExpress.Utils.Locations.Top;
             this.dis.TextSize = new System.Drawing.Size(67, 13);
             // 
+            // emptySpaceItem7
+            // 
+            this.emptySpaceItem7.AllowHotTrack = false;
+            this.emptySpaceItem7.Location = new System.Drawing.Point(0, 547);
+            this.emptySpaceItem7.Name = "emptySpaceItem7";
+            this.emptySpaceItem7.Size = new System.Drawing.Size(1069, 51);
+            this.emptySpaceItem7.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // layoutControlItem19
+            // 
+            this.layoutControlItem19.Control = this.btnAddSupplier;
+            this.layoutControlItem19.Location = new System.Drawing.Point(596, 0);
+            this.layoutControlItem19.Name = "layoutControlItem19";
+            this.layoutControlItem19.Size = new System.Drawing.Size(28, 26);
+            this.layoutControlItem19.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem19.TextVisible = false;
+            this.layoutControlItem19.Click += new System.EventHandler(this.btnAddSupplier_Click);
+            // 
+            // layoutDateJatuhTempo
+            // 
+            this.layoutDateJatuhTempo.Control = this.dateJatuhTempo;
+            this.layoutDateJatuhTempo.Location = new System.Drawing.Point(0, 74);
+            this.layoutDateJatuhTempo.Name = "layoutDateJatuhTempo";
+            this.layoutDateJatuhTempo.Size = new System.Drawing.Size(262, 24);
+            this.layoutDateJatuhTempo.Text = "Jatuh Tempo";
+            this.layoutDateJatuhTempo.TextSize = new System.Drawing.Size(67, 13);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.deleteToolStripMenuItem,
+            this.deleteAllToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(125, 48);
+            // 
+            // deleteToolStripMenuItem
+            // 
+            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.deleteToolStripMenuItem.Text = "&Delete";
+            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
+            // 
+            // deleteAllToolStripMenuItem
+            // 
+            this.deleteAllToolStripMenuItem.Name = "deleteAllToolStripMenuItem";
+            this.deleteAllToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.deleteAllToolStripMenuItem.Text = "Delete &All";
+            this.deleteAllToolStripMenuItem.Click += new System.EventHandler(this.deleteAllToolStripMenuItem_Click);
+            // 
             // ModalPembelian
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1089, 503);
+            this.ClientSize = new System.Drawing.Size(1089, 618);
             this.Controls.Add(this.layoutControl1);
             this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.Shadow;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -776,15 +949,17 @@
             this.Load += new System.EventHandler(this.ModalPembelian_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dateJatuhTempo.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateJatuhTempo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinDisc.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookKode.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spinEdit5.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spinEdit4.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spinKembalian.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spinTunai.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinEdit3.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spinEdit2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spinGrandTotal.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinDiskon.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spinEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spinSubTotal.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridPembelian)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewPembelian)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinTotal.Properties)).EndInit();
@@ -814,19 +989,25 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spinSubTotal)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.laySubTotal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spinGrandTotal)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layGrantotal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spinTunai)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spinKembali)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.laytunai)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.laykembalian)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem17)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem18)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dis)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem19)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutDateJatuhTempo)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -837,10 +1018,6 @@
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
         private DevExpress.XtraEditors.TextEdit textNama;
         private DevExpress.XtraEditors.SpinEdit spinJumlah;
-        private DevExpress.XtraEditors.LookUpEdit lookSupplier;
-        private DevExpress.XtraEditors.LookUpEdit lookTunaiKredit;
-        private DevExpress.XtraEditors.TextEdit textFaktur;
-        private DevExpress.XtraEditors.DateEdit dateTanggal;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
@@ -862,19 +1039,15 @@
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem3;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem4;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup2;
-        private DevExpress.XtraEditors.SpinEdit spinEdit1;
-        private DevExpress.XtraLayout.LayoutControlItem spinSubTotal;
+        private DevExpress.XtraLayout.LayoutControlItem laySubTotal;
         private DevExpress.XtraEditors.SpinEdit spinDiskon;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem14;
-        private DevExpress.XtraEditors.SpinEdit spinEdit2;
-        private DevExpress.XtraLayout.LayoutControlItem spinGrandTotal;
+        private DevExpress.XtraLayout.LayoutControlItem layGrantotal;
         private DevExpress.XtraEditors.SpinEdit spinEdit3;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem15;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem5;
-        private DevExpress.XtraEditors.SpinEdit spinEdit4;
-        private DevExpress.XtraLayout.LayoutControlItem spinTunai;
-        private DevExpress.XtraEditors.SpinEdit spinEdit5;
-        private DevExpress.XtraLayout.LayoutControlItem spinKembali;
+        private DevExpress.XtraLayout.LayoutControlItem laytunai;
+        private DevExpress.XtraLayout.LayoutControlItem laykembalian;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem16;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem17;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem6;
@@ -886,5 +1059,25 @@
         private DevExpress.XtraEditors.LookUpEdit lookSatuan;
         private DevExpress.XtraEditors.SpinEdit spinDisc;
         private DevExpress.XtraLayout.LayoutControlItem dis;
+        private DevExpress.XtraEditors.SimpleButton btnNew;
+        private DevExpress.XtraEditors.SimpleButton btnPrint;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem18;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem7;
+        private DevExpress.XtraEditors.SimpleButton btnAddSupplier;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem19;
+        private DevExpress.XtraLayout.LayoutControlItem layoutDateJatuhTempo;
+        public DevExpress.XtraEditors.LookUpEdit lookSupplier;
+        public DevExpress.XtraEditors.LookUpEdit lookTunaiKredit;
+        public DevExpress.XtraEditors.TextEdit textFaktur;
+        public DevExpress.XtraEditors.DateEdit dateTanggal;
+        public DevExpress.XtraEditors.SpinEdit spinSubTotal;
+        public DevExpress.XtraEditors.SpinEdit spinGrandTotal;
+        public DevExpress.XtraEditors.SpinEdit spinTunai;
+        public DevExpress.XtraEditors.SpinEdit spinKembalian;
+        public DevExpress.XtraEditors.DateEdit dateJatuhTempo;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deleteAllToolStripMenuItem;
     }
 }

@@ -1,5 +1,6 @@
 ﻿using ActiveKonveksi.Helper;
 using ActiveKonveksi.Model;
+using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Grid;
 using MySql.Data.MySqlClient;
 using System;
@@ -127,6 +128,57 @@ namespace ActiveKonveksi.Controller
             sqlParam.Add(new MySqlParameter() { ParameterName = "@keterangan", MySqlDbType = MySqlDbType.VarChar, Value = MPelanggan.keterangan });
 
             string SQLQuery = "UPDATE m_pelanggan set kode=@kode, nama=@nama, alamat=@alamat, tlp=@tlp, email=@email, keterangan=@keterangan where kode= " + kode;
+            obj = h.InsertQuery(SQLQuery, sqlParam);
+            return obj;
+        }
+        #endregion
+        /* ============================================================= */
+
+        /* TABEL Pembelian */
+        #region Tabel Pembelian
+        public OBJSQL SaveNewPembelian(MPembelian MPembelian, GridView _gridview)
+        {
+            OBJSQL obj = null;
+            List<MySqlParameter> sqlParam = new List<MySqlParameter>();
+            sqlParam.Add(new MySqlParameter() { ParameterName = "@faktur", MySqlDbType = MySqlDbType.VarChar, Value = MPembelian.faktur });
+            sqlParam.Add(new MySqlParameter() { ParameterName = "@tanggal", MySqlDbType = MySqlDbType.DateTime, Value = MPembelian.tanggal.Date});
+            sqlParam.Add(new MySqlParameter() { ParameterName = "@id_kredit_pembelian", MySqlDbType = MySqlDbType.Int32, Value = MPembelian.id_kredit_pembelian });
+            sqlParam.Add(new MySqlParameter() { ParameterName = "@jatuhtempo", MySqlDbType = MySqlDbType.DateTime, Value = MPembelian.jatuhtempo?.Date });
+            sqlParam.Add(new MySqlParameter() { ParameterName = "@id_supplier_pembelian", MySqlDbType = MySqlDbType.Int32, Value = MPembelian.id_supplier_pembelian });
+            sqlParam.Add(new MySqlParameter() { ParameterName = "@subtotal", MySqlDbType = MySqlDbType.Double, Value = MPembelian.subtotal });
+            sqlParam.Add(new MySqlParameter() { ParameterName = "@diskon", MySqlDbType = MySqlDbType.Int32, Value = MPembelian.diskon });
+            sqlParam.Add(new MySqlParameter() { ParameterName = "@grandtotal", MySqlDbType = MySqlDbType.Double, Value = MPembelian.grandtotal });
+            sqlParam.Add(new MySqlParameter() { ParameterName = "@tunai", MySqlDbType = MySqlDbType.Double, Value = MPembelian.tunai });
+            sqlParam.Add(new MySqlParameter() { ParameterName = "@kembali", MySqlDbType = MySqlDbType.Double, Value = MPembelian.kembali });
+            String SQLQuery = "INSERT INTO pembelian (faktur, tanggal, id_kredit_pembelian, jatuhtempo, id_supplier_pembelian, subtotal, diskon, grandtotal, tunai, kembali) " +
+                                "VALUES (@faktur, @tanggal, @id_kredit_pembelian, @jatuhtempo, @id_supplier_pembelian, @subtotal, @diskon, @grandtotal, @tunai, @kembali); " +
+
+                          
+                            "SET @NEWID = LAST_INSERT_ID();";
+            //"DECLARE @NEWID int;" +
+            //"SET @NEWID = @@IDENTITY;";
+            
+            //  String SQLQuery = "";
+            for (int i = 0; i < _gridview.RowCount; i++)
+            {
+                string brg = _gridview.GetRowCellValue(i, "id_barang_pembelian").ToString();
+                string jum = _gridview.GetRowCellValue(i, "Jumlah").ToString();
+                string sat = _gridview.GetRowCellValue(i, "id_satuan_pembelian").ToString();
+                string bel = _gridview.GetRowCellValue(i, "HargaBeli").ToString();
+                string dis = _gridview.GetRowCellValue(i, "Diskon").ToString();
+                string ber = _gridview.GetRowCellValue(i, "HargaBersih").ToString();
+                string tot = _gridview.GetRowCellValue(i, "Total").ToString();
+                SQLQuery += "INSERT INTO detail_pembelian (id_pembelian_detail, id_barang_detail, jumlah, id_satuan_detail, hargabeli, diskon, hargabersih, total) " +
+                            "VALUES (@NEWID, " +
+                            "'" + _gridview.GetRowCellValue(i, "id_barang_pembelian").ToString() + "'," +
+                            "'" + _gridview.GetRowCellValue(i, "Jumlah").ToString() + "'," +
+                            "'" + _gridview.GetRowCellValue(i, "id_satuan_pembelian").ToString() + "'," +
+                            "'" + _gridview.GetRowCellValue(i, "HargaBeli").ToString() + "'," +
+                            "'" + _gridview.GetRowCellValue(i, "Diskon").ToString() + "'," +
+                            "'" + _gridview.GetRowCellValue(i, "HargaBersih").ToString() + "'," +
+                            "'" + _gridview.GetRowCellValue(i, "Total").ToString() + "'" +
+                            ");";
+            }
             obj = h.InsertQuery(SQLQuery, sqlParam);
             return obj;
         }

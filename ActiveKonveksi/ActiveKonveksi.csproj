@@ -62,17 +62,22 @@
     <Reference Include="DevExpress.XtraGrid.v15.2, Version=15.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v15.2, Version=15.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraTreeList.v15.2, Version=15.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="mysql.data">
-      <HintPath>H:\Dimas\VisualStudio 2015\Projects\ActiveSoft2POSystem\DLL\mysql.data.dll</HintPath>
+    <Reference Include="MySql.Data, Version=6.2.3.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Downloads\Software\Programming\mysql-connector-net-6.9.8-noinstall\v4.5\MySql.Data.dll</HintPath>
     </Reference>
-    <Reference Include="mysql.data.entity">
-      <HintPath>H:\Dimas\VisualStudio 2015\Projects\ActiveSoft2POSystem\DLL\mysql.data.entity.dll</HintPath>
+    <Reference Include="MySql.Data.Entity.EF5">
+      <HintPath>..\..\..\..\..\Downloads\Software\Programming\mysql-connector-net-6.9.8-noinstall\v4.5\MySql.Data.Entity.EF5.dll</HintPath>
     </Reference>
-    <Reference Include="mysql.visualstudio">
-      <HintPath>H:\Dimas\VisualStudio 2015\Projects\ActiveSoft2POSystem\DLL\mysql.visualstudio.dll</HintPath>
+    <Reference Include="MySql.Data.Entity.EF6">
+      <HintPath>..\..\..\..\..\Downloads\Software\Programming\mysql-connector-net-6.9.8-noinstall\v4.5\MySql.Data.Entity.EF6.dll</HintPath>
     </Reference>
-    <Reference Include="mysql.web">
-      <HintPath>H:\Dimas\VisualStudio 2015\Projects\ActiveSoft2POSystem\DLL\mysql.web.dll</HintPath>
+    <Reference Include="MySql.Fabric.Plugin">
+      <HintPath>..\..\..\..\..\Downloads\Software\Programming\mysql-connector-net-6.9.8-noinstall\v4.5\MySql.Fabric.Plugin.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Web, Version=6.6.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Downloads\Software\Programming\mysql-connector-net-6.9.8-noinstall\v4.5\MySql.Web.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -132,6 +137,7 @@
       <DependentUpon>ModalSupplier.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\MBarang.cs" />
+    <Compile Include="Model\MDetailPembelian.cs" />
     <Compile Include="Model\MPelanggan.cs" />
     <Compile Include="Model\MPembelian.cs" />
     <Compile Include="Model\MSupplier.cs" />
@@ -158,6 +164,12 @@
     </Compile>
     <Compile Include="Module\Pembelian.Designer.cs">
       <DependentUpon>Pembelian.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modal\ModalReturPembelian.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modal\ModalReturPembelian.Designer.cs">
+      <DependentUpon>ModalReturPembelian.cs</DependentUpon>
     </Compile>
     <Compile Include="Module\Supplier.cs">
       <SubType>Form</SubType>
@@ -200,6 +212,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Module\Pembelian.resx">
       <DependentUpon>Pembelian.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modal\ModalReturPembelian.resx">
+      <DependentUpon>ModalReturPembelian.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Module\Supplier.resx">
       <DependentUpon>Supplier.cs</DependentUpon>

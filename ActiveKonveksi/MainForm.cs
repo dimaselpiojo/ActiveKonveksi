@@ -165,10 +165,11 @@ namespace ActiveKonveksi
                     break;
                 case "Pembelian":
                     ModalPembelian MPL = new ModalPembelian();
-                    if (MPL.ShowDialog() == DialogResult.OK)
-                    {
-                        _Pembelian.loadPembelian();
-                    }
+                    MPL.ShowDialog();
+                    //if ((MPL.ShowDialog() == DialogResult.OK) && (MPL.finished))
+                    //{
+                    //    _Pembelian.loadPembelian();
+                    //}
                     break;
             }
         }
@@ -213,6 +214,26 @@ namespace ActiveKonveksi
                         obj = ic.Delete("m_pelanggan", "kode", _Pelanggan.kodePelanggan);
                         _Pelanggan.loadPelanggan();
                     }
+                    break;
+            }
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            string _menus = GlobalVar.TabSelected;
+            switch (_menus)
+            {
+                case "Barang":
+                    _Barang.loadBarang();
+                    break;
+                case "Supplier":
+                    _Supplier.loadSupplier();
+                    break;
+                case "Pelanggan":
+                        _Pelanggan.loadPelanggan();
+                    break;
+                case "Pembelian":
+                    _Pembelian.loadPembelian();
                     break;
             }
         }

@@ -292,6 +292,7 @@
             this.btnRefresh.Size = new System.Drawing.Size(54, 62);
             this.btnRefresh.TabIndex = 2;
             this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // btnDelete
             // 

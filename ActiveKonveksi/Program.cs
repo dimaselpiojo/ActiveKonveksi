@@ -22,7 +22,7 @@ namespace ActiveKonveksi
             DevExpress.UserSkins.BonusSkins.Register();
             UserLookAndFeel.Default.SetSkinStyle("DevExpress Style");
 
-            Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture("id-ID");
+            Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture("us-US");
 
             Application.Run(new MainForm());
         }

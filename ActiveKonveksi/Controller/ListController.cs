@@ -58,7 +58,7 @@ namespace ActiveKonveksi.Controller
         #region Tabel Supplier
         public DataTable gridSupplier()
         {
-            string SQL = "SELECT kode Kode, nama Nama, alamat Alamat, tlp Telepon, Email, Kontak, Keterangan from m_supplier ";
+            string SQL = "SELECT id_supplier Id, kode Kode, nama Nama, alamat Alamat, tlp Telepon, Email, Kontak, Keterangan from m_supplier ";
             ADOHelper h = new ADOHelper();
             DataTable dt = h.ListByQuery(SQL);
             return dt;
@@ -81,6 +81,16 @@ namespace ActiveKonveksi.Controller
         public DataTable gridvPembelian()
         {
             string SQL = "SELECT * from vPembelian ";
+            ADOHelper h = new ADOHelper();
+            DataTable dt = h.ListByQuery(SQL);
+            return dt;
+        }
+
+        public DataTable gridvPembelian(DateTime pertama, DateTime kedua)
+        {
+            pertama = pertama.Date;
+            kedua = kedua.Date;
+            string SQL = "SELECT * from vPembelian where tanggal between STR_TO_DATE('" + pertama+ "','%m/%d/%Y') and STR_TO_DATE('" + kedua+ "','%m/%d/%Y')";
             ADOHelper h = new ADOHelper();
             DataTable dt = h.ListByQuery(SQL);
             return dt;
